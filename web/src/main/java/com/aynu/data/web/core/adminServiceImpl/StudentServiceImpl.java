@@ -1,0 +1,27 @@
+package com.aynu.data.web.core.adminServiceImpl;
+
+import com.aynu.data.web.core.adminDAO.StudentDAO;
+import com.aynu.data.web.core.adminIService.IStudentService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * @Auther: zhangyue
+ * @Date: 2020/2/24
+ * @Description:
+ */
+@Service
+public class StudentServiceImpl implements IStudentService {
+    @Autowired
+    private StudentDAO studentDAO;
+
+    @Override
+    public PageInfo getName() {
+        List list = studentDAO.getName();
+        return new PageInfo(list);
+    }
+}
