@@ -323,12 +323,5 @@ public interface RedisDao {
 	 */
 	public void hmSetIncrement(Object key, Object hashKey, Long value);
 
-	/**
-	 * 消息队列pub方式推送
-	 *
-	 * @param topic
-	 * @param message
-	 * @return boolean
-	 */
-	public void convertAndSend(String topic, String message);
+
 }

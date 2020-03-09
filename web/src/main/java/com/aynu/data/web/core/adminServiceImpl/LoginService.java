@@ -21,6 +21,7 @@ public class LoginService implements ILoginService {
     @Autowired
     private LoginDAO loginDAO;
 
+    @Autowired
     private RedisDao redisDao;
 
     @Override

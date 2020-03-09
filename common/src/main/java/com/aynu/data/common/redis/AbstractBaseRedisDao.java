@@ -19,8 +19,6 @@ public abstract class AbstractBaseRedisDao<K, V> {
 
 	@Resource(name = "redisTemplate")
 	protected RedisTemplate<K, V> redisTemplate;
-	@Autowired
-	protected CountDownLatch latch;
 
 	/**
 	 * 设置redisTemplate

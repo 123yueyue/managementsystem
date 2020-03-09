@@ -271,18 +271,5 @@ public class RedisDaoImpl extends AbstractBaseRedisDao<Object, Object> implement
 		hash.increment(key, hashKey, value);
 	}
 
-	/**
-	 * 向通道发送消息的方法
-	 * @param channel
-	 * @param message
-	 */
-	@Override
-	public void convertAndSend(String channel, String message){
-		try {
-			redisTemplate.convertAndSend(channel, message);
-			latch.await();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+
 }
