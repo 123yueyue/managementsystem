@@ -1,5 +1,6 @@
 package com.aynu.data.web.core.adminDAO;
 
+import com.aynu.data.common.Entity.StudentDO;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -10,5 +11,5 @@ import java.util.List;
  * @Description:
  */
 public interface StudentDAO {
-    List getName();
+    List<StudentDO> getName();
 }

@@ -1,3 +1,5 @@
 com\aynu\data\common\Entity\StudentDO.class
 com\aynu\data\common\bean\ResponseEntity.class
+com\aynu\data\common\Entity\UserDO.class
+com\aynu\data\common\bean\BaseController.class
 com\aynu\data\common\bean\GenericBean.class

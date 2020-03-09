@@ -1,5 +1,6 @@
 package com.aynu.data.web.core.adminServiceImpl;
 
+import com.aynu.data.common.Entity.StudentDO;
 import com.aynu.data.web.core.adminDAO.StudentDAO;
 import com.aynu.data.web.core.adminIService.IStudentService;
 import com.github.pagehelper.PageHelper;
@@ -21,7 +22,7 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public PageInfo getName() {
-        List list = studentDAO.getName();
+        List<StudentDO> list = studentDAO.getName();
         return new PageInfo(list);
     }
 }
