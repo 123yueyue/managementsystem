@@ -13,6 +13,8 @@ public class ResponseEntity extends GenericBean {
     private static final long serialVersionUID = -8299562540124103135L;
     protected Integer status = 0;
     protected String msg = "操作成功.";
+    protected Integer code = 20000;
+
 
     public ResponseEntity() {
         this.put("status", this.status);
@@ -22,6 +24,14 @@ public class ResponseEntity extends GenericBean {
     public ResponseEntity(Integer status, String msg) {
         this.put("status", status);
         this.put("msg", msg);
+    }
+
+    public Integer getCode() {
+        return (Integer)this.get("code");
+    }
+
+    public void setCode(Integer code) {
+        this.put("code", code);
     }
 
     public Integer getStatus() {

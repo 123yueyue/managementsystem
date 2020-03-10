@@ -3,6 +3,7 @@ package com.aynu.data.common.Entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @Auther: zhangyue
@@ -20,6 +21,6 @@ public class UserDO implements Serializable {
     private String adminId;//学校id
     private String institutionId;//学院id
     private String classId;//班级id
-    private String bigRole;//进入前台还是后台
+    private List roles;//进入前台还是后台
 
 }

@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * @Auther: zhangyue
  * @Date: 2020/2/24
- * @Description:
+ * @Description:学生管理接口
  */
 @Api(value = "/data/student",description = "学生管理接口")
 @RestController
@@ -30,20 +30,52 @@ public class StudentController extends BaseController {
     private IStudentService iStudentService;
 
 
-    @ApiOperation(value = "/login", notes = "登录接口")
+    @ApiOperation(value = "", notes = "增加学生")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "id",value = "姓名")
     )
-    @GetMapping("/login")
-    public ResponseEntity test(){
+    @PostMapping
+    public ResponseEntity add(@RequestBody GenericBean genericBean){
+        ResponseEntity responseEntity = new ResponseEntity();
+
+        return responseEntity;
+    }
+
+    @ApiOperation(value = "", notes = "查询学生列表")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "id",value = "姓名")
+    )
+    @GetMapping
+    public ResponseEntity get(){
         ResponseEntity responseEntity = new ResponseEntity();
         GenericBean genericBean = this.getPageData();
-        PageInfo pageInfo = iStudentService.getName();
 
-        responseEntity.setResponsePageInfo(pageInfo);
         return responseEntity;
-        //return "yueyue";
-        //return iStudentService.getName();
     }
+
+    @ApiOperation(value = "", notes = "修改学生信息接口")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "id",value = "姓名")
+    )
+    @PutMapping
+    public ResponseEntity update(){
+        ResponseEntity responseEntity = new ResponseEntity();
+        GenericBean genericBean = this.getPageData();
+
+        return responseEntity;
+    }
+
+    @ApiOperation(value = "", notes = "删除学生接口")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "id",value = "姓名")
+    )
+    @DeleteMapping
+    public ResponseEntity delete(){
+        ResponseEntity responseEntity = new ResponseEntity();
+        GenericBean genericBean = this.getPageData();
+
+        return responseEntity;
+    }
+
 
 }

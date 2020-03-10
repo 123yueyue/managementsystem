@@ -14,7 +14,7 @@ public class Global {
     /**
      * jwt-sso单点配置信息
      */
-    public static final String jwtTokenCookieName = "JWT-TOKEN";
+    public static final String jwtTokenCookieName = "token";
     public static final String signingKey = "management_v587";
 
 

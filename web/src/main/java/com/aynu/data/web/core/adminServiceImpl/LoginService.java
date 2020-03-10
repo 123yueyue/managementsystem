@@ -9,6 +9,9 @@ import com.aynu.data.web.core.adminIService.ILoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * @Auther: zhangyue
@@ -29,18 +32,26 @@ public class LoginService implements ILoginService {
         UserDO userDO = new UserDO();
         genericBean.put("tabelName", Global.sysAdminM);
         userDO = loginDAO.getAdminInfo(genericBean);    //判断是不是超级管理员
+        List list = new ArrayList<>();
         if(userDO == null){
             genericBean.put("tabelName",Global.sysTeacherM);//查询是否是教师登录
-            userDO = loginDAO.getTeacherInfo(genericBean);
+            userDO = loginDAO.getAdminInfo(genericBean);
             if(userDO == null){
                 genericBean.put("tabelName",Global.sysStudentM);//查询是否是学生登录
-                userDO = loginDAO.getStudentInfo(genericBean);
-                userDO.setBigRole("taskCenter");    //学生登录，进入前台
+                userDO = loginDAO.getAdminInfo(genericBean);
+                if(userDO == null) {
+                    return null;
+                }else{
+                    list.add("task");
+                    userDO.setRoles(list);    //学生登录，进入前台
+                }
             }else{  //如果是教师登录，则进入后台
-                userDO.setBigRole("admin");
+                list.add("admin");
+                userDO.setRoles(list);
             }
         }else{  //如果是超级管理员，跳入后台
-            userDO.setBigRole("admin");
+            list.add("admin");
+            userDO.setRoles(list);
         }
         return userDO;
     }

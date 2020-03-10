@@ -141,7 +141,7 @@ public class SessionFilter implements Filter {
 	 * @param request
 	 */
 	public static void saveSessionInnerUser(HttpServletRequest request, HttpServletResponse response,
-                                            UserDO userInfoDO) throws Exception {
+                                            UserDO userInfoDO,String token) throws Exception {
 		// 设置cookie
 		String sessionId = request.getSession().getId();
 		Cookie cookie = new Cookie(SessionFilter.SESSION_NAME, sessionId);
@@ -153,7 +153,7 @@ public class SessionFilter implements Filter {
 					.getWebApplicationContext(request.getSession().getServletContext());
 			redisDao = (RedisDao) wct.getBean("redisDao");
 		}
-		redisDao.vSet(SessionFilter.USERREDISKEY + sessionId, userInfoDO, Long.valueOf(3 * 60 * 60));
+		redisDao.vSet(token, userInfoDO, Long.valueOf(3 * 60 * 60));
 	}
 
 	/**
