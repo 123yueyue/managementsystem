@@ -12,5 +12,4 @@ public interface ILoginService {
 
     UserDO getUserInfo(GenericBean genericBean);
 
-    void logout();
 }

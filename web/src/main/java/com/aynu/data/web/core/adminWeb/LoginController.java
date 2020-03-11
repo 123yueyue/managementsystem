@@ -114,15 +114,22 @@ public class LoginController extends BaseController {
         return responseEntity;
     }
 
-    @GetMapping("/logout")
+    @PostMapping("/logout")
     @ApiOperation(value = "logout", notes = "退出接口")
     @ApiImplicitParams({
             @ApiImplicitParam( paramType = "query" ,name = "username" , value = "账号", required = true, dataType = "UserInfoDO"),
     })
-    public ResponseEntity logout(){
+    public ResponseEntity logout(HttpServletRequest request){
         ResponseEntity responseEntity = new ResponseEntity();
+        try {
+            String token = request.getHeader("X-Token");
+            redisDao.delete(token);
+            responseEntity.setCode(20000);
+        }catch (Exception e){
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+        }
 
-        iLoginService.logout();
 
         return responseEntity;
 

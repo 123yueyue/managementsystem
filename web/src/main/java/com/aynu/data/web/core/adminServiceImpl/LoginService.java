@@ -56,8 +56,5 @@ public class LoginService implements ILoginService {
         return userDO;
     }
 
-    @Override
-    public void logout() {
-        redisDao.vSet("account",1);
-    }
+
 }
