@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--suppress ALL -->
+<mapper namespace="com.aynu.data.web.core.adminDAO.InstitutionDAO">
+
+    <sql id="tabelColumn">
+        id,
+        institutionName,
+        intro,
+        password,
+        account,
+        adminId
+    </sql>
+
+    <sql id="tabelName">
+        sys_institution_m
+    </sql>
+
+    <select id="getInstitutionList" parameterType="com.aynu.data.common.bean.GenericBean" resultType="com.aynu.data.common.bean.GenericBean">
+        select id,
+        institutionName,
+        intro,
+        password,
+        account,
+        email,
+        phone,
+        adminId,
+        (select userName from sys_admin_m admin where ins.adminId = admin.id) as adminName
+        from sys_institution_m ins
+        <where>
+            <if test="institutionName != null and institutionName != ''">
+                userName LIKE CONCAT(CONCAT('%',#{institutionName}),'%') or account LIKE CONCAT(CONCAT('%',#{institutionName}),'%')
+            </if>
+        </where>
+    </select>
+
+    <insert id="addInstitution" parameterType="com.aynu.data.common.bean.GenericBean">
+        insert into <include refid="tabelName"/>(institutionName,account,password,email,phone,intro,adminId,createTime)
+        values
+        (#{institutionName},#{account},#{prePassword},#{email},#{phone},#{intro},#{adminId},now())
+    </insert>
+
+    <update id="updateInstitution" parameterType="com.aynu.data.common.bean.GenericBean">
+        update <include refid="tabelName"/>
+        <trim prefix="set" suffixOverrides=",">
+            <if test="institutionName != null and institutionName != ''">
+                institutionName = #{institutionName},
+            </if>
+            <if test="intro != null and intro != ''">
+                intro = #{intro},
+            </if>
+            <if test="adminId != null and adminId != ''">
+                adminId = #{adminId},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="account != null and account != ''">
+                account = #{account},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{prePassword},
+            </if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteInstitution" parameterType="com.aynu.data.common.bean.GenericBean">
+        delete from <include refid="tabelName"/>
+        where id = #{id}
+    </delete>
+
+    <!--校验学院名称接口-->
+    <select id="checkName" parameterType="com.aynu.data.common.bean.GenericBean" resultType="int">
+        select count(*) from <include refid="tabelName"/>
+        <where>
+            <if test="institutionName!=null and institutionName!=''">
+                institutionName = #{institutionName}
+            </if>
+            <if test="account!=null and account!=''">
+                account = #{account}
+            </if>
+        </where>
+    </select>
+
+    <!--获取学校列表-->
+    <select id="schoolList" resultType="com.aynu.data.common.bean.GenericBean">
+        select id as label,userName as value from sys_admin_m
+    </select>
+</mapper>

@@ -1,5 +1,6 @@
 package com.aynu.data.web.core.adminIService;
 
+import com.aynu.data.common.bean.GenericBean;
 import com.github.pagehelper.PageInfo;
 
 /**
@@ -8,5 +9,16 @@ import com.github.pagehelper.PageInfo;
  * @Description:
  */
 public interface ISchoolService {
-    PageInfo getName();
+
+    PageInfo getSchoolList(GenericBean genericBean);
+
+    void addSchool(GenericBean genericBean);
+
+    void updateSchool(GenericBean genericBean);
+
+    void deleteSchool(GenericBean genericBean);
+
+    int checkAccount(GenericBean genericBean);
+
+    int checkUserName(GenericBean genericBean);
 }

@@ -1,6 +1,7 @@
 package com.aynu.data.web.core.adminDAO;
 
 import com.aynu.data.common.Entity.StudentDO;
+import com.aynu.data.common.bean.GenericBean;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -12,4 +13,8 @@ import java.util.List;
  */
 public interface StudentDAO {
     List<StudentDO> getName();
+
+    List getSchoolList(GenericBean genericBean);
+
+    void addSchool(GenericBean genericBean);
 }

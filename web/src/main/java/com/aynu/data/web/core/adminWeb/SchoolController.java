@@ -1,15 +1,19 @@
 package com.aynu.data.web.core.adminWeb;
 
 import com.aynu.data.common.bean.BaseController;
+import com.aynu.data.common.bean.ConstantMsgUtil;
 import com.aynu.data.common.bean.GenericBean;
 import com.aynu.data.common.bean.ResponseEntity;
 import com.aynu.data.web.core.adminIService.ISchoolService;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 /**
  * @Auther: zhangyue
@@ -20,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/data/school")
 public class SchoolController extends BaseController {
+    private static final Logger logger = Logger.getLogger(SchoolController.class);
 
     @Autowired
     private ISchoolService iSchoolService;
@@ -33,9 +38,14 @@ public class SchoolController extends BaseController {
     public ResponseEntity add(@RequestBody GenericBean genericBean){
         ResponseEntity responseEntity = new ResponseEntity();
         try{
-            
+            iSchoolService.addSchool(genericBean);
+            responseEntity.setCode(20000);
+            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
         }catch (Exception e){
-
+            logger.error(e);
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
         }
         return responseEntity;
     }
@@ -47,8 +57,18 @@ public class SchoolController extends BaseController {
     @GetMapping
     public ResponseEntity get(){
         ResponseEntity responseEntity = new ResponseEntity();
-        GenericBean genericBean = this.getPageData();
-
+        try {
+            GenericBean genericBean = this.getPageData();
+            PageInfo pageInfo = iSchoolService.getSchoolList(genericBean);
+            responseEntity.setCode(20000);
+            responseEntity.setResponsePageInfo(pageInfo);
+            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
+        }catch (Exception e){
+            logger.error(e);
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+        }
         return responseEntity;
     }
 
@@ -59,7 +79,17 @@ public class SchoolController extends BaseController {
     @PutMapping
     public ResponseEntity update(){
         ResponseEntity responseEntity = new ResponseEntity();
-        GenericBean genericBean = this.getPageData();
+        try {
+            GenericBean genericBean = this.getPageData();
+            iSchoolService.updateSchool(genericBean);
+            responseEntity.setCode(20000);
+            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
+        } catch (Exception e) {
+            logger.error(e);
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+        }
 
         return responseEntity;
     }
@@ -71,8 +101,69 @@ public class SchoolController extends BaseController {
     @DeleteMapping
     public ResponseEntity delete(){
         ResponseEntity responseEntity = new ResponseEntity();
-        GenericBean genericBean = this.getPageData();
+        try {
+            GenericBean genericBean = this.getPageData();
+            iSchoolService.deleteSchool(genericBean);
+            responseEntity.setCode(20000);
+            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
+        } catch (Exception e) {
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+        }
 
         return responseEntity;
     }
+    @ApiOperation(value = "/checkAccount", notes = "校验账号接口")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "account",value = "账号")
+    )
+    @GetMapping("/checkAccount")
+    public ResponseEntity checkAccount(){
+        ResponseEntity responseEntity = new ResponseEntity();
+        try {
+            GenericBean genericBean = this.getPageData();
+            int count = iSchoolService.checkAccount(genericBean);
+            responseEntity.setCode(20000);
+            if(count>0){
+                responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+                responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+            }else{
+                responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+                responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
+            }
+        } catch (Exception e) {
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+        }
+
+        return responseEntity;
+    }
+
+    @ApiOperation(value = "/checkUserName", notes = "校验用户名接口")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "userName",value = "用户名")
+    )
+    @GetMapping("/checkUserName")
+    public ResponseEntity checkUserName(){
+        ResponseEntity responseEntity = new ResponseEntity();
+        try {
+            GenericBean genericBean = this.getPageData();
+            int count = iSchoolService.checkUserName(genericBean);
+            responseEntity.setCode(20000);
+            if(count>0){
+                responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+                responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+            }else{
+                responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+                responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
+            }
+        } catch (Exception e) {
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+        }
+
+        return responseEntity;
+    }
+
 }
