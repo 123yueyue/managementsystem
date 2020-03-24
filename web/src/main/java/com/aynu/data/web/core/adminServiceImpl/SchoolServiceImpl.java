@@ -23,7 +23,6 @@ public class SchoolServiceImpl implements ISchoolService {
     @Autowired
     private SchoolDAO schoolDAO;
 
-
     @Override
     public PageInfo getSchoolList(GenericBean genericBean) {
         PageHelper.startPage(genericBean.getInt("pageNum"),genericBean.getInt("pageSize"));

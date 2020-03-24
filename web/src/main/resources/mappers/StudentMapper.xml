@@ -2,9 +2,77 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!--suppress ALL -->
 <mapper namespace="com.aynu.data.web.core.adminDAO.StudentDAO">
+    <sql id="tabel_column">
+        id,userName,account,password,phone,email,summary,adminId,institutionId,classId,createTime
+    </sql>
 
-    <select id="getName" parameterType="int" resultType="com.aynu.data.common.Entity.StudentDO">
-        select id,name from student
+    <sql id="tabel_name">
+        sys_student_m
+    </sql>
+
+    <select id="getStudentList" parameterType="com.aynu.data.common.bean.GenericBean" resultType="com.aynu.data.common.Entity.StudentDO">
+        select <include refid="tabel_column"/>
+        from <include refid="tabel_name"/>
+        <where>
+            <if test="userName != null and userName != ''">
+                userName LIKE CONCAT(CONCAT('%',#{userName}),'%')
+            </if>
+        </where>
     </select>
 
+    <insert id="addStudent" parameterType="com.aynu.data.common.bean.GenericBean">
+        insert into <include refid="tabel_name"/>(userName,account,password,phone,email,summary,adminId,institutionId,classId,createTime)
+        VALUES
+        (#{userName},#{account},#{password},#{phone},#{email},#{summary},#{adminId},#{institutionId},#{classId},now())
+    </insert>
+
+    <update id="updateStudent" parameterType="com.aynu.data.common.bean.GenericBean">
+        update <include refid="tabel_name"/>
+        <set>
+            <if test="userName != null and userName != ''">
+                userName = #{userName},
+            </if>
+            <if test="account != null and account != ''">
+                account = #{account},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="summary != null and summary != ''">
+                summary = #{summary},
+            </if>
+            <if test="adminId != null and adminId != ''">
+                adminId = #{adminId},
+            </if>
+            <if test="institutionId != null and institutionId != ''">
+                institutionId = #{institutionId},
+            </if>
+            <if test="classId != null and classId != ''">
+                classId = #{classId},
+            </if>
+        </set>
+    </update>
+
+    <delete id="deleteStudent" parameterType="com.aynu.data.common.bean.GenericBean">
+        delete from <include refid="tabel_name"/>
+        where id = #{id}
+    </delete>
+
+    <select id="checkName" parameterType="com.aynu.data.common.bean.GenericBean" resultType="int">
+        select count(*) from <include refid="tabel_name"/>
+        <where>
+            <if test="userName != null and userName != ''">
+                userName = #{userName}
+            </if>
+            <if test="account != null and account != ''">
+                account = #{account}
+            </if>
+        </where>
+    </select>
 </mapper>

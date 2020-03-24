@@ -12,9 +12,14 @@ import java.util.List;
  * @Description:
  */
 public interface StudentDAO {
-    List<StudentDO> getName();
 
-    List getSchoolList(GenericBean genericBean);
+    List getStudentList(GenericBean genericBean);
 
-    void addSchool(GenericBean genericBean);
+    void addStudent(GenericBean genericBean);
+
+    void updateStudent(GenericBean genericBean);
+
+    void deleteStudent(GenericBean genericBean);
+
+    int checkName(GenericBean genericBean);
 }

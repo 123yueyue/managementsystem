@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--suppress ALL -->
+<mapper namespace="com.aynu.data.web.core.adminDAO.ClassDAO">
+
+    <sql id="tabelColumn">
+        id,
+        className,
+        intro,
+        adminId,
+        institutionId,
+        createTime
+    </sql>
+
+    <sql id="tabelName">
+        sys_class_m
+    </sql>
+
+    <select id="getClassList" parameterType="com.aynu.data.common.bean.GenericBean" resultType="com.aynu.data.common.bean.GenericBean">
+        select * from (select id,
+        className,
+        intro,
+        (select institutionName from sys_institution_m ins where ins.id = class.institutionId) as institutionName,
+        (select userName from sys_admin_m admin where class.adminId = admin.id) as adminName
+        from sys_class_m class) tabel
+        <where>
+            <if test="className != null and className != ''">
+                tabel.className LIKE CONCAT(CONCAT('%',#{className}),'%')
+                or
+                tabel.institutionName LIKE CONCAT(CONCAT('%',#{className}),'%')
+                or
+                tabel.adminName LIKE CONCAT(CONCAT('%',#{className}),'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="getInstitutionList" parameterType="com.aynu.data.common.bean.GenericBean" resultType="com.aynu.data.common.bean.GenericBean">
+        select id as label,institutionName as value from sys_institution_m
+    </select>
+
+    <insert id="addClass" parameterType="com.aynu.data.common.bean.GenericBean">
+        insert into <include refid="tabelName"/>(className,institutionId,intro,adminId,createTime)
+        values
+        (#{className},#{institutionId},#{intro},#{adminId},now())
+    </insert>
+
+    <update id="updateClass" parameterType="com.aynu.data.common.bean.GenericBean">
+        update <include refid="tabelName"/>
+        <trim prefix="set" suffixOverrides=",">
+            <if test="className != null and className != ''">
+                className = #{className},
+            </if>
+            <if test="intro != null and intro != ''">
+                intro = #{intro},
+            </if>
+            <if test="adminId != null and adminId != ''">
+                adminId = #{adminId},
+            </if>
+            <if test="institutionId != null and institutionId != ''">
+                institutionId = #{institutionId},
+            </if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteClass" parameterType="com.aynu.data.common.bean.GenericBean">
+        delete from <include refid="tabelName"/>
+        where id = #{id}
+    </delete>
+
+    <!--校验学院名称接口-->
+    <select id="checkName" parameterType="com.aynu.data.common.bean.GenericBean" resultType="int">
+        select count(*) from <include refid="tabelName"/>
+        <where>
+            <if test="className!=null and className!=''">
+                className = #{className}
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,12 +1,11 @@
 package com.aynu.data.web.core.adminWeb;
 
-
 import com.aynu.data.common.bean.BaseController;
 import com.aynu.data.common.bean.ConstantMsgUtil;
 import com.aynu.data.common.bean.GenericBean;
+import com.aynu.data.common.bean.ResponseEntity;
 import com.aynu.data.web.core.adminIService.IClassService;
 import com.aynu.data.web.core.adminIService.IInstitutionService;
-import com.aynu.data.web.core.adminIService.IStudentService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -15,27 +14,26 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.aynu.data.common.bean.ResponseEntity;
 
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * @Auther: zhangyue
- * @Date: 2020/2/24
- * @Description:学生管理接口
+ * @Date: 2020/3/23
+ * @Description:学院管理接口
  */
-@Api(value = "/data/student",description = "学生管理接口")
+@Api(value = "/data/class",description = "学院管理接口")
 @RestController
-@RequestMapping("/data/student")
-public class StudentController extends BaseController {
-
-    private static final Logger logger = Logger.getLogger(StudentController.class);
+@RequestMapping("/data/class")
+public class ClassController extends BaseController {
+    private static final Logger logger = Logger.getLogger(ClassController.class);
 
     @Autowired
-    private IStudentService iStudentService;
+    private IClassService iClassService;
 
-    @ApiOperation(value = "", notes = "新建学生")
+    @Autowired
+    private IInstitutionService iInstitutionService;
+
+    @ApiOperation(value = "", notes = "新建班级")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "id",value = "姓名")
     )
@@ -43,7 +41,7 @@ public class StudentController extends BaseController {
     public ResponseEntity add(@RequestBody GenericBean genericBean){
         ResponseEntity responseEntity = new ResponseEntity();
         try{
-            iStudentService.addStudent(genericBean);
+            iClassService.addClass(genericBean);
             responseEntity.setCode(20000);
             responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
             responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
@@ -55,7 +53,7 @@ public class StudentController extends BaseController {
         return responseEntity;
     }
 
-    @ApiOperation(value = "", notes = "查询学生列表")
+    @ApiOperation(value = "", notes = "查询班级列表")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "id",value = "姓名")
     )
@@ -65,7 +63,7 @@ public class StudentController extends BaseController {
         try {
             GenericBean genericBean = this.getPageData();
             responseEntity.setCode(20000);
-            PageInfo pageInfo = iStudentService.getStudentList(genericBean);
+            PageInfo pageInfo = iClassService.getClassList(genericBean);
             responseEntity.setResponsePageInfo(pageInfo);
             responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
             responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
@@ -77,7 +75,7 @@ public class StudentController extends BaseController {
         return responseEntity;
     }
 
-    @ApiOperation(value = "", notes = "修改学生信息接口")
+    @ApiOperation(value = "", notes = "修改班级信息接口")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "id",value = "姓名")
     )
@@ -86,7 +84,7 @@ public class StudentController extends BaseController {
         ResponseEntity responseEntity = new ResponseEntity();
         try {
             GenericBean genericBean = this.getPageData();
-            iStudentService.updateStudent(genericBean);
+            iClassService.updateClass(genericBean);
             responseEntity.setCode(20000);
             responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
             responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
@@ -99,7 +97,7 @@ public class StudentController extends BaseController {
         return responseEntity;
     }
 
-    @ApiOperation(value = "", notes = "删除学生接口")
+    @ApiOperation(value = "", notes = "删除班级接口")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "id",value = "姓名")
     )
@@ -108,7 +106,7 @@ public class StudentController extends BaseController {
         ResponseEntity responseEntity = new ResponseEntity();
         try {
             GenericBean genericBean = this.getPageData();
-            iStudentService.deleteStudent(genericBean);
+            iClassService.deleteClass(genericBean);
             responseEntity.setCode(20000);
             responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
             responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
@@ -119,7 +117,7 @@ public class StudentController extends BaseController {
 
         return responseEntity;
     }
-    @ApiOperation(value = "/getInstitutionList", notes = "获取学生列表")
+    @ApiOperation(value = "/getInstitutionList", notes = "获取学院列表")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "",value = "")
     )
@@ -128,9 +126,9 @@ public class StudentController extends BaseController {
         ResponseEntity responseEntity = new ResponseEntity();
         try {
             GenericBean genericBean = this.getPageData();
-//            PageInfo pageInfo = iClassService.getInstitutionList(genericBean);
-//            responseEntity.setCode(20000);
-//            responseEntity.setResponsePageInfo(pageInfo);
+            PageInfo pageInfo = iClassService.getInstitutionList(genericBean);
+            responseEntity.setCode(20000);
+            responseEntity.setResponsePageInfo(pageInfo);
             responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
             responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
         } catch (Exception e) {
@@ -141,7 +139,7 @@ public class StudentController extends BaseController {
         return responseEntity;
     }
 
-    @ApiOperation(value = "/checkName", notes = "校验学生名接口")
+    @ApiOperation(value = "/checkName", notes = "校验用户名接口")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "institutionName",value = "用户名")
     )
@@ -150,7 +148,7 @@ public class StudentController extends BaseController {
         ResponseEntity responseEntity = new ResponseEntity();
         try {
             GenericBean genericBean = this.getPageData();
-            int count = iStudentService.checkName(genericBean);
+            int count = iClassService.checkName(genericBean);
             responseEntity.setCode(20000);
             if(count>0){
                 responseEntity.setStatus(ConstantMsgUtil.getFailStatus());

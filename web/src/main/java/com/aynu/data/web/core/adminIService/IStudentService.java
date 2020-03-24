@@ -1,5 +1,6 @@
 package com.aynu.data.web.core.adminIService;
 
+import com.aynu.data.common.bean.GenericBean;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -10,5 +11,14 @@ import java.util.List;
  * @Description:
  */
 public interface IStudentService {
-    PageInfo getName();
+    
+    void addStudent(GenericBean genericBean);
+    
+    PageInfo getStudentList(GenericBean genericBean);
+
+    void updateStudent(GenericBean genericBean);
+
+    void deleteStudent(GenericBean genericBean);
+
+    int checkName(GenericBean genericBean);
 }
