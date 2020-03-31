@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--suppress ALL -->
+<mapper namespace="com.aynu.data.web.core.adminDAO.ApplyDAO">
+
+    <select id="getFirstLevel" resultType="com.aynu.data.common.bean.GenericBean">
+        select classId as value,className as label
+        from class_info_b
+        where parentId = -1
+    </select>
+
+    <select id="getSecondLevel" parameterType="String" resultType="com.aynu.data.common.bean.GenericBean">
+        select classId as value ,className as label
+        from class_info_b
+        where parentId = #{classId}
+    </select>
+
+    <select id="thirdLevel" parameterType="String" resultType="com.aynu.data.common.bean.GenericBean">
+        select classId as value ,className as label
+        from class_info_b
+        where parentId = #{classId}
+    </select>
+
+    <select id="getSecondOptions" parameterType="com.aynu.data.common.bean.GenericBean" resultType="com.aynu.data.common.bean.GenericBean">
+        select standardId as value ,standardName as label
+        from standard_info_b
+        where classId = #{classId}
+    </select>
+
+    <select id="getStandardInfo" parameterType="com.aynu.data.common.bean.GenericBean" resultType="com.aynu.data.common.bean.GenericBean">
+        select standardId , standardName , intro , review , classId
+        from standard_info_b
+        where standardId = #{0}
+    </select>
+
+    <insert id="addApply" parameterType="com.aynu.data.common.bean.GenericBean">
+        insert into apply_datasource_b(studentId,standardId,applyscore)
+        values (#{studentId},#{standardId},#{score})
+    </insert>
+
+    <select id="getApplyDetail" parameterType="com.aynu.data.common.bean.GenericBean" resultType="com.aynu.data.common.bean.GenericBean">
+        select
+        (select className from class_info_b c where left(ds.standardId,1) = c.classId ) as className,
+        (select standardName from standard_info_b s where ds.standardId = s.standardId ) as standardName,
+        ds.applyscore,
+        (select deservedScore from apply_dataresult_b s where ds.standardId = s.standardId ) as deservedScore
+        from apply_datasource_b ds
+        <where>
+            1=1 and studentId = #{studentId}
+        </where>
+    </select>
+</mapper>

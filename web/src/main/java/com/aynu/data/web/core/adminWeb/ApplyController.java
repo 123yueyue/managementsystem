@@ -1,12 +1,12 @@
 package com.aynu.data.web.core.adminWeb;
 
-
 import com.aynu.data.common.bean.BaseController;
 import com.aynu.data.common.bean.ConstantMsgUtil;
 import com.aynu.data.common.bean.GenericBean;
+import com.aynu.data.common.bean.ResponseEntity;
+import com.aynu.data.web.core.adminIService.IApplyService;
 import com.aynu.data.web.core.adminIService.IClassService;
 import com.aynu.data.web.core.adminIService.IInstitutionService;
-import com.aynu.data.web.core.adminIService.IStudentService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -15,57 +15,33 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.aynu.data.common.bean.ResponseEntity;
 
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * @Auther: zhangyue
- * @Date: 2020/2/24
- * @Description:学生管理接口
+ * @Date: 2020/3/29
+ * @Description:学生申请管理接口
  */
-@Api(value = "/data/student",description = "学生管理接口")
+@Api(value = "/data/apply",description = "学生申请管理接口")
 @RestController
-@RequestMapping("/data/student")
-public class StudentController extends BaseController {
-
-    private static final Logger logger = Logger.getLogger(StudentController.class);
+@RequestMapping("/data/apply")
+public class ApplyController extends BaseController {
+    private static final Logger logger = Logger.getLogger(ApplyController.class);
 
     @Autowired
-    private IStudentService iStudentService;
+    private IApplyService iApplyService;
 
-    @ApiOperation(value = "", notes = "新建学生")
+
+    @ApiOperation(value = "/getApplyInfo", notes = "获取申请信息")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "id",value = "姓名")
     )
-    @PostMapping
-    public ResponseEntity add(@RequestBody GenericBean genericBean){
+    @GetMapping("/getApplyInfo")
+    public ResponseEntity getApplyInfo(){
         ResponseEntity responseEntity = new ResponseEntity();
         try{
-            iStudentService.addStudent(genericBean);
+            PageInfo pageInfo = iApplyService.getApplyInfo();
             responseEntity.setCode(20000);
-            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
-            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
-        }catch (Exception e){
-            logger.error(e);
-            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
-            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
-        }
-        return responseEntity;
-    }
-
-    @ApiOperation(value = "", notes = "查询学生列表")
-    @ApiImplicitParams(
-            @ApiImplicitParam(name = "id",value = "姓名")
-    )
-    @GetMapping
-    public ResponseEntity get(){
-        ResponseEntity responseEntity = new ResponseEntity();
-        try {
-            GenericBean genericBean = this.getPageData();
-            responseEntity.setCode(20000);
-            PageInfo pageInfo = iStudentService.getStudentList(genericBean);
             responseEntity.setResponsePageInfo(pageInfo);
             responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
             responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
@@ -77,92 +53,90 @@ public class StudentController extends BaseController {
         return responseEntity;
     }
 
-    @ApiOperation(value = "", notes = "修改学生信息接口")
+    @ApiOperation(value = "/getSecondOptions", notes = "获取申请信息第二张表")
     @ApiImplicitParams(
-            @ApiImplicitParam(name = "id",value = "姓名")
+            @ApiImplicitParam(name = "data",value = "第一级联返回值")
     )
-    @PutMapping
-    public ResponseEntity update(){
+    @GetMapping("/getSecondOptions")
+    public ResponseEntity getSecondOptions(){
         ResponseEntity responseEntity = new ResponseEntity();
-        try {
-            GenericBean genericBean = this.getPageData();
-            iStudentService.updateStudent(genericBean);
-            responseEntity.setCode(20000);
-            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
-            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
-        } catch (Exception e) {
-            logger.error(e);
-            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
-            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
-        }
-
-        return responseEntity;
-    }
-
-    @ApiOperation(value = "", notes = "删除学生接口")
-    @ApiImplicitParams(
-            @ApiImplicitParam(name = "id",value = "姓名")
-    )
-    @DeleteMapping
-    public ResponseEntity delete(){
-        ResponseEntity responseEntity = new ResponseEntity();
-        try {
-            GenericBean genericBean = this.getPageData();
-            iStudentService.deleteStudent(genericBean);
-            responseEntity.setCode(20000);
-            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
-            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
-        } catch (Exception e) {
-            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
-            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
-        }
-
-        return responseEntity;
-    }
-    @ApiOperation(value = "/getClassList", notes = "获取下拉框班级列表")
-    @ApiImplicitParams(
-            @ApiImplicitParam(name = "",value = "")
-    )
-    @GetMapping("/getClassList")
-    public ResponseEntity getClassList(){
-        ResponseEntity responseEntity = new ResponseEntity();
-        try {
-            GenericBean genericBean = this.getPageData();
-            PageInfo pageInfo = iStudentService.getClassList(genericBean);
+        try{
+            GenericBean genericBean = this.getPageData() ;
+            PageInfo pageInfo = iApplyService.getSecondOptions(genericBean);
             responseEntity.setCode(20000);
             responseEntity.setResponsePageInfo(pageInfo);
             responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
             responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
-        } catch (Exception e) {
+        }catch (Exception e){
+            logger.error(e);
             responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
             responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
         }
-
         return responseEntity;
     }
 
-    @ApiOperation(value = "/checkName", notes = "校验学生名接口")
+    @ApiOperation(value = "/getStandardInfo", notes = "获取申请信息的详情信息")
     @ApiImplicitParams(
-            @ApiImplicitParam(name = "institutionName",value = "用户名")
+            @ApiImplicitParam(name = "data",value = "第二级联返回值")
     )
-    @GetMapping("/checkName")
-    public ResponseEntity checkName(){
+    @GetMapping("/getStandardInfo")
+    public ResponseEntity getStandardInfo(){
         ResponseEntity responseEntity = new ResponseEntity();
-        try {
-            GenericBean genericBean = this.getPageData();
-            int count = iStudentService.checkName(genericBean);
+        try{
+            GenericBean genericBean = this.getPageData() ;
+            GenericBean pageInfo = iApplyService.getStandardInfo(genericBean);
             responseEntity.setCode(20000);
-            if(count>0){
-                responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
-                responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
-            }else{
-                responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
-                responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
-            }
-        } catch (Exception e) {
+            responseEntity.setResponseObject(pageInfo);
+            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
+        }catch (Exception e){
+            logger.error(e);
             responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
             responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
         }
         return responseEntity;
     }
+
+    @ApiOperation(value = "", notes = "申请实践积分")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "data",value = "第二级联返回值")
+    )
+    @PostMapping
+    public ResponseEntity addApply(@RequestBody GenericBean genericBean){
+        ResponseEntity responseEntity = new ResponseEntity();
+        try{
+            iApplyService.addApply(genericBean);
+            responseEntity.setCode(20000);
+            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
+        }catch (Exception e){
+            logger.error(e);
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+        }
+        return responseEntity;
+    }
+
+    @ApiOperation(value = "/getApplyDetail", notes = "申请实践积分细节详情")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "pageNum,pageSize,studentId",value = "分页")
+    )
+    @GetMapping("/getApplyDetail")
+    public ResponseEntity getApplyDetail(){
+        ResponseEntity responseEntity = new ResponseEntity();
+        try{
+            GenericBean genericBean = this.getPageData();
+            responseEntity.setCode(20000);
+            PageInfo pageInfo = iApplyService.getApplyDetail(genericBean);
+            responseEntity.setResponsePageInfo(pageInfo);
+            responseEntity.setStatus(ConstantMsgUtil.getSuccStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getSuccMsg());
+        }catch (Exception e){
+            logger.error(e);
+            responseEntity.setStatus(ConstantMsgUtil.getFailStatus());
+            responseEntity.setMsg(ConstantMsgUtil.getFailMsg());
+        }
+        return responseEntity;
+    }
+
 }

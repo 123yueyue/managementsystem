@@ -17,6 +17,7 @@ public class ClassDO implements Serializable {
     private static final long serialVersionUID = 5929135083083123823L;
     private Integer id;
     private String className;
+    private String grade;
     private String intro;
     private String adminId;
     private String institutionId;

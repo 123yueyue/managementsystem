@@ -42,7 +42,7 @@ public class LoginService implements ILoginService {
                 if(userDO == null) {
                     return null;
                 }else{
-                    list.add("task");
+                    list.add("student");
                     userDO.setRoles(list);    //学生登录，进入前台
                 }
             }else{  //如果是教师登录，则进入后台

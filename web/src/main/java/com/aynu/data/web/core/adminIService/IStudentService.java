@@ -21,4 +21,6 @@ public interface IStudentService {
     void deleteStudent(GenericBean genericBean);
 
     int checkName(GenericBean genericBean);
+
+    PageInfo getClassList(GenericBean genericBean);
 }

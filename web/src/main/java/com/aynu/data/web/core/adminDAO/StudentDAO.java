@@ -22,4 +22,6 @@ public interface StudentDAO {
     void deleteStudent(GenericBean genericBean);
 
     int checkName(GenericBean genericBean);
+
+    List getClassList(GenericBean genericBean);
 }

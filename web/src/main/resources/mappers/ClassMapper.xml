@@ -19,6 +19,7 @@
     <select id="getClassList" parameterType="com.aynu.data.common.bean.GenericBean" resultType="com.aynu.data.common.bean.GenericBean">
         select * from (select id,
         className,
+        grade,
         intro,
         (select institutionName from sys_institution_m ins where ins.id = class.institutionId) as institutionName,
         (select userName from sys_admin_m admin where class.adminId = admin.id) as adminName

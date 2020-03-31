@@ -47,4 +47,9 @@ public class StudentServiceImpl implements IStudentService {
     public int checkName(GenericBean genericBean) {
         return studentDAO.checkName(genericBean);
     }
+
+    @Override
+    public PageInfo getClassList(GenericBean genericBean) {
+        return new PageInfo(studentDAO.getClassList(genericBean));
+    }
 }

@@ -2,20 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59a3ddcb-c4d7-402f-89e6-00cd8658d2b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/ClassDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/ClassDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IClassService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/ClassServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/ClassController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mappers/ClassMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/ApplyDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IApplyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/ApplyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/ApplyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/mappers/ApplyMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/StudentDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/StudentDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/ClassDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/ClassDO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/StudentDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IStudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/SchoolServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/SchoolServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/LoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/StudentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/mappers/ClassMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/mappers/ClassMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/mappers/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/mappers/StudentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/aynu/data/web/core/adminDAO/StudentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/aynu/data/web/core/adminDAO/StudentDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/aynu/data/web/core/adminIService/IStudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/aynu/data/web/core/adminIService/IStudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/aynu/data/web/core/adminServiceImpl/StudentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/aynu/data/web/core/adminServiceImpl/StudentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/aynu/data/web/core/adminWeb/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/aynu/data/web/core/adminWeb/StudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/mappers/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/mappers/StudentMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,62 +52,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/StudentController.java">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/ApplyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2415">
-              <caret line="130" column="66" selection-start-line="130" selection-start-column="66" selection-end-line="130" selection-end-column="66" />
+            <state relative-caret-position="167">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IApplyService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/ApplyServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1990#1991#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IStudentService.java">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/ApplyDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="22" column="7" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/StudentServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-              <folding>
-                <element signature="e#723#724#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#1097#1098#0" expanded="true" />
-                <element signature="e#1122#1123#0" expanded="true" />
-                <element signature="e#1222#1223#0" expanded="true" />
-                <element signature="e#1247#1248#0" expanded="true" />
-                <element signature="e#1067#1068#0" expanded="true" />
-                <element signature="e#1091#1092#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/StudentDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="428">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/mappers/StudentMapper.xml">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/mappers/ApplyMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="73" column="36" lean-forward="true" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+            <state relative-caret-position="54">
+              <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -122,6 +114,7 @@
       <find>addSchool</find>
       <find>checkAccount</find>
       <find>getClassList</find>
+      <find>checkName</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,12 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/src/main/resources/mappers/LoginMapper.xml" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/SessionFilter.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/sessionFilter/JwtUtil.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/sessionFilter/CookieUtil.java" />
-        <option value="$PROJECT_DIR$/web/pom.xml" />
-        <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/redis/RedisConfig.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/common/src/main/resources/application.properties" />
@@ -147,8 +134,6 @@
         <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/bean/ResponseEntity.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/sessionFilter/SessionFilter.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/UserDO.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/LoginController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/LoginService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/ILoginService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/ISchoolService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/SchoolDAO.java" />
@@ -168,19 +153,27 @@
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/InstitutionServiceImpl.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/InstitutionDO.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/mappers/InstitutionMapper.xml" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/ClassDO.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IClassService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/ClassServiceImpl.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/ClassDAO.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/ClassController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/mappers/ClassMapper.xml" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IStudentService.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/StudentController.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/SchoolServiceImpl.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/StudentDO.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IStudentService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/StudentServiceImpl.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/StudentDAO.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/StudentDO.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/mappers/StudentMapper.xml" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/StudentController.java" />
+        <option value="$PROJECT_DIR$/web/src/test/java/com/aynu/data/web/WebApplicationTests.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/ClassDO.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/mappers/ClassMapper.xml" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/LoginService.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/LoginController.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IApplyService.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/ApplyDAO.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/ApplyController.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/ApplyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/mappers/ApplyMapper.xml" />
       </list>
     </option>
   </component>
@@ -239,6 +232,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -294,14 +288,6 @@
             <path>
               <item name="managementsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="managementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="managementsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="managementsystem" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -333,27 +319,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="managementsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="managementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="managementsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="managementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="Filter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="managementsystem" type="b2602c69:ProjectViewProjectNode" />
@@ -431,7 +396,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,7 +407,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/main/resources/mappers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -454,10 +418,10 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.aynu.data.web.core.adminDAO" />
+      <recent name="com.aynu.data.web.core.adminIService" />
       <recent name="com.aynu.data.web.core.adminServiceImpl" />
       <recent name="com.aynu.data.web.core.adminWeb" />
       <recent name="com.aynu.data.common.Entity" />
-      <recent name="com.aynu.data.web.core.adminIService" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\learning\Graduation project\code\managementsystem\web\src\main\resources\mappers" />
@@ -518,18 +482,24 @@
       <workItem from="1584535050215" duration="2867000" />
       <workItem from="1584753208759" duration="15847000" />
       <workItem from="1584927734414" duration="5507000" />
-      <workItem from="1585054506472" duration="6005000" />
+      <workItem from="1585054506472" duration="8831000" />
+      <workItem from="1585143542650" duration="2166000" />
+      <workItem from="1585224213883" duration="1310000" />
+      <workItem from="1585359368151" duration="1306000" />
+      <workItem from="1585378227440" duration="7559000" />
+      <workItem from="1585618755098" duration="8260000" />
+      <workItem from="1585663420433" duration="5757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141398000" />
+    <option name="totallyTimeSpent" value="170582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4968153" visible="true" weight="0.27987897" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4968153" visible="true" weight="0.30257186" />
       <window_info id="Structure" order="1" sideWeight="0.50318474" side_tool="true" weight="0.2708018" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -540,14 +510,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32764506" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.29522184" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" visible="true" weight="0.47098976" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.51877135" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32764506" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
@@ -568,51 +538,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="13" selection-start-line="13" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/redis/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167">
-          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/redis/AbstractBaseRedisDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/bean/ConstantMsgUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="23" column="118" lean-forward="true" selection-start-line="23" selection-start-column="96" selection-end-line="23" selection-end-column="118" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1358#1359#0" expanded="true" />
-            <element signature="e#2855#2856#0" expanded="true" />
-            <element signature="e#2928#2929#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/resources/config/constantMsg.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/redis/RedisDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -624,13 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="325" selection-start-line="325" selection-end-line="325" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/global/Global.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -698,23 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/ILoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/mappers/LoginMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -726,13 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="24" column="21" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/WebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="21" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -793,16 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/TeacherDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -841,16 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/InstitutionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3645">
-          <caret line="147" column="50" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/InstitutionDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -862,13 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/ClassDO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -935,34 +802,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/mappers/ClassMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/ClassController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="164" column="5" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="164" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
-          <caret line="130" column="66" selection-start-line="130" selection-start-column="66" selection-end-line="130" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IStudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -973,37 +816,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/StudentServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IStudentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-          <folding>
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="513">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/StudentDO.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/StudentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="837">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+            <element signature="e#1390#1391#0" expanded="true" />
+            <element signature="e#1465#1466#0" expanded="true" />
+            <element signature="e#1538#1539#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/StudentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="540">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/global/Global.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/test/java/com/aynu/data/web/WebApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/WebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/StudentDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/aynu/data/common/Entity/ClassDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/mappers/ClassMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/ILoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="126" column="41" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/InstitutionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="37" column="66" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1012,8 +942,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/mappers/StudentMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="73" column="36" lean-forward="true" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        <state relative-caret-position="1283">
+          <caret line="68" column="15" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminIService/IApplyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminDAO/ApplyDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminWeb/ApplyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/aynu/data/web/core/adminServiceImpl/ApplyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+          <folding>
+            <element signature="e#1990#1991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/mappers/ApplyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
         </state>
       </provider>
     </entry>
